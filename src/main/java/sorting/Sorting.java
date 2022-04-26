@@ -1,25 +1,16 @@
 package sorting;
 
-import java.io.Console;
+import java.util.Arrays;
 
-class main {
+class Sorting {
 
     /**
      * ------------------------------------------
      * Find a pair with the given sum in an array
+     *
+     * http://www.techiedelight.com/find-pair-with-given-sum-array/
      * ------------------------------------------
      */
-
-    static void printConsoleObject() {
-        Console console = System.console();
-        console.writer().print(console);
-    }
-
-    static void readPasswordFromConsole() {
-        Console console = System.console();
-        char[] password = console.readPassword("Enter password: ");
-        //console.printf(String.valueOf(password));
-    }
 
     public static void findGivenSum(Integer[] intArrs, int givenSum) {
         // validate array
@@ -39,6 +30,29 @@ class main {
         }
     }
 
+    public static void findPair(Integer[] intArrs, int givenSum) {
+        Arrays.sort(intArrs);
+        for (Integer i : intArrs) {
+            System.out.printf("%d \n", i);
+        }
+
+        // validate array
+//        if (intArrs.length < 1) {
+//            System.console().printf("Invalid array");
+//            System.console().printf("END program...");
+//        } else {
+//            for (Integer i : intArrs) {
+//                for (Integer j : intArrs) {
+//                    int tempSum = i + j;
+//                    if (tempSum == givenSum) {
+//                        System.out.print("Found a pair\n");
+//                        System.out.printf("Target = (%d, %d)", i, j);
+//                    }
+//                }
+//            }
+//        }
+    }
+
     public static void main(String[] args) {
         //printConsoleObject();
 
@@ -46,7 +60,9 @@ class main {
 
         Integer[] intArrs = {7, 8, 9, 4, 8, 5};
         Integer expectedSum = 12;
-        findGivenSum(intArrs, expectedSum);
+        findPair(intArrs, expectedSum);
+
+//        findGivenSum(intArrs, expectedSum);
 
 
 //        double dNumb =12e3d;
